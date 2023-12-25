@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Не беда. Послушай песню</title>
+    <style>
+
+        body {
+            margin: 0;
+            overflow: hidden; /* Чтобы убрать полосы прокрутки, вызванные видео */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Чтобы видео оставалось под другими элементами страницы */
+        }
+
+        content {
+            position: relative;
+            z-index: 1; /* Чтобы контент находился над видео */
+            font-size: 36px; /* Размер текста 36px */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+        Ваш браузер не поддерживает тег video.
+    </video>
+    <div class="content">
+        <table align="right">
+        <tr><td>
+          <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

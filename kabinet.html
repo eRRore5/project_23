@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ваш кабинет</title>
+    <style>
+      @keyframes blink {
+    0% {
+        text-shadow: 0 0 10px red; /* Тень с красным свечением */
+    }
+    25% {
+        text-shadow: 0 0 10px blue; /* Тень с синим свечением */
+    }
+    50% {
+        text-shadow: 0 0 10px green; /* Тень с зеленым свечением */
+    }
+    75% {
+        text-shadow: 0 0 10px orange; /* Тень с оранжевым свечением */
+    }
+    100% {
+        text-shadow: 0 0 10px purple; /* Тень с фиолетовым свечением */
+    }
+}
+
+.blinking-text {
+    animation: blink 5s infinite;
+    font-size: 30px; /* Размер текста */
+    font-weight: bold; /* Увеличенная толщина шрифта */
+    display: inline-block;
+    color: gold; /* Белый текст */
+
+}
+pre{
+  animation: blink 5s infinite;
+    font-size: 34px; /* Размер текста */
+    font-weight: bold; /* Увеличенная толщина шрифта */
+    display: inline-block;
+    color: gold; /* Белый текст */
+}
+h1 {
+    font-family: 'Trebuchet MS', sans-serif;
+    /* Рубленый шрифт заголовка */
+}
+
+p {
+    font-family: 'Gill Sans', sans-serif  ;
+    /* Шрифт с засечками */
+}
+
+        body {
+            /* Указывает путь к изображению или его URL */
+            background-image: url('bg.jpg');
+            /* Размер изображения (cover занимает всю ширину и высоту body) */
+            background-size: cover;
+            /* Повторять изображение по горизонтали и вертикали, если необходимо */
+            background-repeat: no-repeat;
+            /* Цвет фона, который будет виден, пока изображение загружается или если оно не существует */
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body >
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const enteredLogin = urlParams.get('login');
+            const enteredPassword = urlParams.get('password');
+            alert('Вечер в хату, ' + enteredLogin + ' ' + enteredPassword);
+        });
+
+        const apiKey = 'AIzaSyDrrdPfdhFX-ao9qkEVq47zBZxdPP_n3Go';
+        const spreadsheetId = '1QDUDiN4PbOfcFoKDblHvxFIVYuwYBMrKm5yb9kz3iF8';
+        const sheetName = 'Ответы на форму (1)';
+        function formatArray(arr) {
+          return arr.map(item => `Название: ${item[0]}, Исполнитель: ${item[2]}`).join('\n');
+        }
+        function handleData(data) {
+          // Здесь вы можете использовать данные за пределами функции обратного вызова
+          console.log(data);
+
+          // Пример: передача данных в другую функцию
+          anotherFunction(data);
+        }
+        function anotherFunction(data) {
+            // Ваш код для обработки данных
+            const dataall = data;
+            dataall.shift(); // Удалить первый элемент
+            dataall.forEach(subarray => subarray.shift()); // Удалить первый элемент из каждого подмассива
+            console.log('Данные в другой функции:', dataall);
+            let projects = [];
+            let tasks = [];
+            let subtasks = [];
+
+            // Разбиваем на три массива
+            dataall.forEach(subarray => {
+                const itemType = subarray[1]; // Второй элемент подмассива
+
+                if (itemType === 'Проект') {
+                    projects.push(subarray);
+                } else if (itemType === 'Задача') {
+                    tasks.push(subarray);
+                } else if (itemType === 'Подзадача') {
+                    subtasks.push(subarray);
+                }
+            });
+            tasks = linkElements(tasks,projects);
+            subtasks = linkElements(subtasks,tasks);
+            console.log(projects);
+            console.log(tasks);
+            console.log(subtasks);
+
+
+
+            // Выводим данные на страницу
+            document.getElementById('projects-container').textContent = formatArray(projects);
+            document.getElementById('tasks-container').textContent = formatArray(tasks);
+            document.getElementById('subtasks-container').textContent = formatArray(subtasks);
+            // Проекты
+            /*const tableContainer = document.getElementById('table-container');
+            tableContainer.appendChild(buildTable(projects, tasks, subtasks));*/
+        }
+
+        /*function buildTable(projects, tasks, subtasks) {
+    const table = document.createElement('table');
+    table.border = '1';
+
+    // Заголовок таблицы
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    headerRow.innerHTML = '<th>Имя проекта</th><th>Исполнитель проекта</th><th>Имя задачи</th><th>Исполнитель задачи</th><th>Имя подзадачи</th><th>Исполнитель подзадачи</th>';
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Тело таблицы
+    const tbody = document.createElement('tbody');
+
+    // Создаем строки таблицы на основе данных из массивов projects, tasks и subtasks
+    projects.forEach(project => {
+        const [projectName, projectExecutor] = project;
+
+        const projectRow = document.createElement('tr');
+        const projectCell = document.createElement('td');
+        const projectExecutorCell = document.createElement('td');
+        projectCell.textContent = projectName;
+        projectExecutorCell.textContent = projectExecutor;
+
+        projectRow.appendChild(projectCell);
+        projectRow.appendChild(projectExecutorCell);
+
+        tbody.appendChild(projectRow);
+
+        // Обрабатываем соответствующие задачи для проекта
+        const projectTasks = tasks.filter(task => task[3] === projectName);
+        projectTasks.forEach(task => {
+            const [taskName, taskExecutor] = task;
+
+            const taskRow = document.createElement('tr');
+            const taskCell = document.createElement('td');
+            const taskExecutorCell = document.createElement('td');
+            taskCell.textContent = taskName;
+            taskExecutorCell.textContent = taskExecutor;
+
+            taskRow.appendChild(taskCell);
+            taskRow.appendChild(taskExecutorCell);
+
+            tbody.appendChild(taskRow);
+
+            // Обрабатываем соответствующие подзадачи для задачи
+            const taskSubtasks = subtasks.filter(subtask => subtask[3] === taskName);
+            taskSubtasks.forEach(subtask => {
+                const [subtaskName, subtaskExecutor] = subtask;
+
+                const subtaskRow = document.createElement('tr');
+                const subtaskCell = document.createElement('td');
+                const subtaskExecutorCell = document.createElement('td');
+                subtaskCell.textContent = subtaskName;
+                subtaskExecutorCell.textContent = subtaskExecutor;
+
+                subtaskRow.appendChild(subtaskCell);
+                subtaskRow.appendChild(subtaskExecutorCell);
+
+                tbody.appendChild(subtaskRow);
+            });
+        });
+    });
+
+    table.appendChild(tbody);
+
+    return table;
+}*/
+
+        function linkElements(array, parentArray) {
+    return array.map(item => {
+        const parentName = item[3]; // Предполагаем, что имя родителя находится в 4-м элементе
+        const parent = parentArray.find(parentItem => parentItem[0] === parentName);
+        if (parent) {
+            // Добавляем имя и второй элемент подмассива родителя
+            return [...item, parent[0], parent[2]];
+        } else {
+            return item; // Если родитель не найден, оставляем без изменений
+        }
+    });
+}
+
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    const values = data.values;
+                    handleData(values);
+                } else {
+                    console.error('Ошибка при получении данных:', xhr.statusText);
+                }
+            }
+        };
+
+        xhr.open('GET', url, true);
+        xhr.send();
+    </script>
+    <table align="center">
+      <tr>
+      <td>
+    <p class="blinking-text">Projects</p>
+    <br>
+    <p class="blinking-text"><pre id="projects-container"></pre></p>
+    <p class="blinking-text">Tasks</p>
+    <br>
+    <p class="blinking-text"><pre id="tasks-container"></pre></p>
+    <p class="blinking-text">Subtasks</p>
+    <br>
+    <p class="blinking-text"><pre id="subtasks-container"></pre></p></td>
+            <td>
+        
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnzNgqGExhajWkJxh3wc_dg6Qf5Kh5HzItmGvMJVKqxzJj5w/viewform?embedded=true" width="640" height="932" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe></td>
+        </tr>
+    </table>
+    
+</body>
+
+</html>

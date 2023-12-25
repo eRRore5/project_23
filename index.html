@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Авторизация</title>
+    <style>
+      @keyframes blink {
+    0% {
+        text-shadow: 0 0 10px red; /* Тень с красным свечением */
+    }
+    25% {
+        text-shadow: 0 0 10px blue; /* Тень с синим свечением */
+    }
+    50% {
+        text-shadow: 0 0 10px green; /* Тень с зеленым свечением */
+    }
+    75% {
+        text-shadow: 0 0 10px orange; /* Тень с оранжевым свечением */
+    }
+    100% {
+        text-shadow: 0 0 10px purple; /* Тень с фиолетовым свечением */
+    }
+}
+
+.blinking-text {
+    animation: blink 5s infinite;
+    font-size: 30px; /* Размер текста */
+    font-weight: bold; /* Увеличенная толщина шрифта */
+    display: inline-block;
+    color: gold; /* Белый текст */
+
+}
+pre{
+  animation: blink 5s infinite;
+    font-size: 34px; /* Размер текста */
+    font-weight: bold; /* Увеличенная толщина шрифта */
+    display: inline-block;
+    color: gold; /* Белый текст */
+}
+h1 {
+    font-family: 'Trebuchet MS', sans-serif;
+    /* Рубленый шрифт заголовка */
+}
+
+p {
+    font-family: 'Gill Sans', sans-serif  ;
+    /* Шрифт с засечками */
+}
+
+        body {
+            /* Указывает путь к изображению или его URL */
+            background-image: url('bg.jpg');
+            /* Размер изображения (cover занимает всю ширину и высоту body) */
+            background-size: cover;
+            /* Повторять изображение по горизонтали и вертикали, если необходимо */
+            background-repeat: no-repeat;
+            /* Цвет фона, который будет виден, пока изображение загружается или если оно не существует */
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <p class="blinking-text">Вход
+        <br>
+        <br>
+    Логин <br><input type="text" name="login" id="login" size="40">
+    <br>
+    <br>
+    Пароль <br><input type="password" name="password" id="password" size="40">
+    <br>
+
+    <input type="button" value="Показать пароль" onclick="togglePasswordVisibility()">
+    <br>
+    <br>
+    <input type="submit" id="send" value="Отправить" /></p>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById("send").onclick = function sendForm() {
+        const loginbox = document.getElementById('login');
+        const passwordBox = document.getElementById('password');
+        const enteredLogin = loginbox.value;
+        const enteredPassword = passwordBox.value;
+
+        // Путь к файлу с логином и паролем
+        const filePath = 'db.txt';
+
+        // Fetch API для чтения файла
+        fetch(filePath)
+            .then(response => response.text())
+            .then(data => {
+                let rex = /\b\w+:\w+\b/gi;
+                let a = data.match(rex);
+                let checkpoint = false;
+                for (let key of a)
+                {
+                    let b = key.split(':'); 
+                    if((b[0]==enteredLogin)&&(enteredPassword==b[1]))
+                    {
+                        checkpoint = true;
+                        break;
+                    }
+                    else
+                    {
+                        checkpoint = false;
+                    }   
+                }
+                if(checkpoint)
+                {
+                    window.location.href= '/kabinet.html?login=' + enteredLogin + '&password=' + enteredPassword
+                }
+                else
+                {
+                    window.location.href= '/fail.html'
+                }
+                
+            })
+            .catch(error => {
+                console.error('Ошибка чтения файла:', error);
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>
