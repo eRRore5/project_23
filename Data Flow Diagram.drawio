@@ -1,0 +1,419 @@
+<mxfile host="app.diagrams.net" modified="2024-02-06T09:08:01.657Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="B9D5DOsNe7w4kqA-LA4m" version="21.8.2" type="device">
+  <diagram name="Страница — 1" id="phvoP7IJSwyPfB0V8rCY">
+    <mxGraphModel dx="2670" dy="757" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pg12uco52hq4Dzlb7ife-2" value="Работник" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="369" y="117" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-3" value="База данных учётных записей работников" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="482" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.475;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-4" target="pg12uco52hq4Dzlb7ife-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="708.56" y="305.20000000000005" as="targetPoint" />
+            <mxPoint x="642.44" y="155.98000000000002" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-4" value="Клиент" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="583" y="117" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.482;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-2" target="pg12uco52hq4Dzlb7ife-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="432.4000000000001" y="159.17999999999995" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-8" value="Запрос на вход в виде логина и пароля" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-6">
+          <mxGeometry x="0.089" y="2" relative="1" as="geometry">
+            <mxPoint x="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-25" value="Проверка данных авторизации" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="427" width="85" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.494;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-3" target="pg12uco52hq4Dzlb7ife-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-79" value="Данные учётных записей" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-30">
+          <mxGeometry x="-0.3804" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-37" value="Выдача прав" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="558" width="85" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.49;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-25" target="pg12uco52hq4Dzlb7ife-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-40" value="Уровень пользователя" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-38">
+          <mxGeometry x="-0.1662" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-39" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="483" y="705" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-37" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-66" value="Запрос на отображение проектов/задачи/подзадачи" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-41">
+          <mxGeometry x="-0.456" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-61" value="Информация о новом проекте" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-45">
+          <mxGeometry x="0.6515" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-60" value="Информация о новом проекте/задачи/подзадачи" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-50">
+          <mxGeometry x="0.7134" y="-1" relative="1" as="geometry">
+            <mxPoint x="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-62" value="Имя и код проекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-51">
+          <mxGeometry x="0.8151" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-81" value="Имя и код проекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-53">
+          <mxGeometry x="0.546" y="-3" relative="1" as="geometry">
+            <mxPoint x="2" y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-71" value="Имя и код подзадачи или задачи" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-68">
+          <mxGeometry x="0.8939" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-121" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-122" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-121">
+          <mxGeometry x="0.8938" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-42" target="pg12uco52hq4Dzlb7ife-130">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-132" value="Имя и код проекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-131">
+          <mxGeometry x="0.9178" y="1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-42" value="Отображение проектов/задач/подзадач" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="495" y="846" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-39" target="pg12uco52hq4Dzlb7ife-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-80" value="Информация о проектах, задачах и подзадачах" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-43">
+          <mxGeometry x="-0.0022" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-44" target="pg12uco52hq4Dzlb7ife-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-117" value="Добавление данных в базу данных" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-116">
+          <mxGeometry x="-0.0882" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-44" value="Создание проекта. Форма для клиента" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="683" y="995" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-48">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="268.00000000000045" y="1157" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-84" value="Добавление данных в базу данных" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-75">
+          <mxGeometry x="-0.0839" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-48" value="Создание проекта/задачи/подзадачи. Форма для работника" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="220" y="975" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-49" target="pg12uco52hq4Dzlb7ife-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-77" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-65">
+          <mxGeometry x="0.0698" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-49" value="Просмотр статуса проекта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="51" y="974" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-52" target="pg12uco52hq4Dzlb7ife-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-78" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-59">
+          <mxGeometry x="-0.0778" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-52" value="Чат участников проекта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="370" y="974" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-56" target="pg12uco52hq4Dzlb7ife-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-92" value="Данные чата" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-90">
+          <mxGeometry x="-0.109" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-56" value="База данных чатов" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="358" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-64" target="pg12uco52hq4Dzlb7ife-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-93" value="Данные статуса проекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-74">
+          <mxGeometry x="-0.4135" y="-3" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-64" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="39" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-67" target="pg12uco52hq4Dzlb7ife-105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-107" value="Изменение данных в базе данных" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-106">
+          <mxGeometry x="-0.218" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-67" value="Отчёт о сделанной работе" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-116" y="974" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-73" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="99" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-110" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-109">
+          <mxGeometry x="-0.9537" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-73" value="Вывод статуса проекта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="51" y="1285" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-76" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="276" y="1285" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="277" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-102" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-87">
+          <mxGeometry x="-0.8792" y="1" relative="1" as="geometry">
+            <mxPoint x="1" y="-140" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-76" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="217" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-89" target="pg12uco52hq4Dzlb7ife-95">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="419" y="1437" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-96" value="Сообщение для записи" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-94">
+          <mxGeometry x="-0.1988" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-89" value="Отображение сообщений" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="371" y="1285" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-95" target="pg12uco52hq4Dzlb7ife-89">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="319" y="1469" />
+              <mxPoint x="319" y="1333" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-100" value="Данные чата" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-98">
+          <mxGeometry x="0.1772" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-95" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="895" y="1469" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-101" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-99">
+          <mxGeometry x="-0.9025" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-95" value="База данных чатов" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="359" y="1439" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-105" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-68" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-111" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-108">
+          <mxGeometry x="-0.9581" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-105" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-128" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-113" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="637" y="726.9999999999999" as="targetPoint" />
+            <mxPoint x="825" y="1181" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="731" y="1263" />
+              <mxPoint x="895" y="1263" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-119" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-118">
+          <mxGeometry x="-0.9368" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-113" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="671" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-120" target="pg12uco52hq4Dzlb7ife-123">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-125" value="ID исполнителя" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-124">
+          <mxGeometry x="-0.344" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-120" value="Получение задачи или подзадачи для работы" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-326" y="974" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-123" target="pg12uco52hq4Dzlb7ife-126">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-123" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-338" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-126" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-278" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-129" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-128">
+          <mxGeometry x="-0.9696" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-126" value="Вывод задачи или подзадачи для работы" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-326" y="1285" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-130" target="pg12uco52hq4Dzlb7ife-133">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-135" value="Добавление задач к проекту" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-134">
+          <mxGeometry x="0.176" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-130" value="Разбиение проекта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-536" y="974" width="96" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-133" target="pg12uco52hq4Dzlb7ife-136">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-504" y="1259" />
+              <mxPoint x="-578" y="1259" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-138" value="Добавление подзадач к задачам" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-137">
+          <mxGeometry x="0.0196" relative="1" as="geometry">
+            <mxPoint x="-68" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-133" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-477" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-141" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-139">
+          <mxGeometry x="-0.9777" y="-2" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-133" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-548" y="1159" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-140" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pg12uco52hq4Dzlb7ife-136" target="pg12uco52hq4Dzlb7ife-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-578" y="1641" />
+              <mxPoint x="895" y="1641" />
+              <mxPoint x="895" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-142" value="Запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pg12uco52hq4Dzlb7ife-140">
+          <mxGeometry x="-0.958" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg12uco52hq4Dzlb7ife-136" value="База данных проектов/задач/подзадач" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-638" y="1299" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
