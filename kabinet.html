@@ -5,48 +5,69 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Ваш кабинет</title>
     <style>
-      @keyframes blink {
-    0% {
-        text-shadow: 0 0 10px red; /* Тень с красным свечением */
-    }
-    25% {
-        text-shadow: 0 0 10px blue; /* Тень с синим свечением */
-    }
-    50% {
-        text-shadow: 0 0 10px green; /* Тень с зеленым свечением */
-    }
-    75% {
-        text-shadow: 0 0 10px orange; /* Тень с оранжевым свечением */
-    }
-    100% {
-        text-shadow: 0 0 10px purple; /* Тень с фиолетовым свечением */
-    }
-}
+        @keyframes blink {
+            0% {
+                text-shadow: 0 0 10px white;
+                /* Тень с красным свечением */
+            }
 
-.blinking-text {
-    animation: blink 5s infinite;
-    font-size: 30px; /* Размер текста */
-    font-weight: bold; /* Увеличенная толщина шрифта */
-    display: inline-block;
-    color: gold; /* Белый текст */
+            100% {
+                text-shadow: 0 0 10px gold;
+                /* Тень с зеленым свечением */
+            }
+        }
 
-}
-pre{
-  animation: blink 5s infinite;
-    font-size: 34px; /* Размер текста */
-    font-weight: bold; /* Увеличенная толщина шрифта */
-    display: inline-block;
-    color: gold; /* Белый текст */
-}
-h1 {
-    font-family: 'Trebuchet MS', sans-serif;
-    /* Рубленый шрифт заголовка */
-}
+        .google-form {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
 
-p {
-    font-family: 'Gill Sans', sans-serif  ;
-    /* Шрифт с засечками */
-}
+        .blinking-text {
+            animation: blink 2s infinite;
+            font-size: 30px;
+            /* Размер текста */
+            font-weight: bold;
+            /* Увеличенная толщина шрифта */
+            display: inline-block;
+            color: whitesmoke;
+            padding: 10px 15px;
+            background-color: transparent;
+            /* Прозрачный фон */
+            border-bottom: none;
+            cursor: pointer;
+            /* Белый цвет текста */
+            /* Изменение курсора на указатель */
+            transition: background-color 0.2s;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+            /* Белый текст */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+
+        }
+
+        pre {
+            animation: blink 5s infinite;
+            font-size: 34px;
+            /* Размер текста */
+            font-weight: bold;
+            /* Увеличенная толщина шрифта */
+            display: inline-block;
+            color: gold;
+            /* Белый текст */
+        }
+
+        h1 {
+            font-family: 'Trebuchet MS', sans-serif;
+            /* Рубленый шрифт заголовка */
+        }
+
+        p {
+            font-family: 'Gill Sans', sans-serif;
+            /* Шрифт с засечками */
+        }
 
         body {
             /* Указывает путь к изображению или его URL */
@@ -58,151 +79,476 @@ p {
             /* Цвет фона, который будет виден, пока изображение загружается или если оно не существует */
             background-color: #f0f0f0;
         }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            padding: 10px 15px;
+            background-color: transparent;
+            /* Прозрачный фон */
+            border-bottom: none;
+            cursor: pointer;
+            color: white;
+            /* Белый цвет текста */
+            /* Изменение курсора на указатель */
+            transition: background-color 0.2s;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            /* Плавное изменение цвета фона */
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li:hover {
+            background-color: gold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+            /* Обводка текста */
+            /* Золотая подсветка при наведении */
+        }
+
+        .clicked {
+            background-color: gold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: transparent;
+            /* Прозрачный фон */
+            border: 2px solid gold;
+            /* Золотая рамка */
+            color: gold;
+            /* Цвет текста */
+            font-size: 16px;
+            cursor: pointer;
+            /* Изменение курсора на указатель */
+            transition: background-color 0.3s, color 0.3s;
+            /* Плавное изменение цвета фона и текста */
+        }
+
+        .button:hover {
+            background-color: gold;
+            /* Золотая подсветка при наведении */
+            color: white;
+            /* Белый цвет текста при наведении */
+        }
     </style>
 </head>
 
-<body >
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <p class="blinking-text">ПРОЕКТЫ:</p>
+                <ul id="item-list">
+
+                </ul>
+                <div class="google-form" id="formstatus">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScrQ6lernjj-8_4DQLOSuPgDqyGN72TC_4okCI3AY9jv122sQ/viewform?embedded=true"
+                        width="640" height="374" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+                </div>
+                <p class="blinking-text" id="textforzadachi">Задачи выбранного проекта:</p>
+                <!-- Добавляем newItemList после item-list -->
+
+
+                <ul id="new-item-list"></ul>
+                <button class="button" id="buttonzadachi" onclick="toggleGoogleForm()">Создать задачу</button>
+                <br>
+                <div class="google-form" id="googleFormContainer">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSd2pBj9kP8sxdpSH2Zkj2sfOIrWzdCFglHJvfoIO7rez_l95Q/viewform?embedded=true"
+                        width="640" height="688" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+                </div>
+            </td>
+            <td>
+                <div class="google-form" id="formProject">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSe0JTrrTlvPi2w3HqjZUAyHNVgmPsLytAUP0QmL5sdy1ezkZg/viewform?embedded=true"
+                        width="640" height="552" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+                </div>
+            </td>
+        </tr>
+    </table>
     <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
-            const enteredLogin = urlParams.get('login');
-            const enteredPassword = urlParams.get('password');
-            alert('Вечер в хату, ' + enteredLogin + ' ' + enteredPassword);
+            const namefromindex = urlParams.get('name');
+            const lvlfromindex = urlParams.get('lvl');
+            alert('Добро пожаловать, ' + namefromindex);
+            nameuser = namefromindex;
+            lvl = parseInt(lvlfromindex);
         });
 
-        const apiKey = 'AIzaSyDrrdPfdhFX-ao9qkEVq47zBZxdPP_n3Go';
-        const spreadsheetId = '1QDUDiN4PbOfcFoKDblHvxFIVYuwYBMrKm5yb9kz3iF8';
-        const sheetName = 'Ответы на форму (1)';
-        function formatArray(arr) {
-          return arr.map(item => `Название: ${item[0]}, Исполнитель: ${item[2]}`).join('\n');
-        }
-        function handleData(data) {
-          // Здесь вы можете использовать данные за пределами функции обратного вызова
-          console.log(data);
+        var nameuser = '';
+        var lvl = 0;
+        var toggleButton = document.getElementById('buttonzadachi');
+        toggleButton.style.display = 'none';
+        var formContainer = document.getElementById('googleFormContainer');
+        var formstatus = document.getElementById('formstatus');
+        formstatus.style.display = 'none';
+        var formproject = document.getElementById('formProject');
+        formContainer.style.display = 'none';
 
-          // Пример: передача данных в другую функцию
-          anotherFunction(data);
+        function toggleGoogleForm() {
+            var formContainer = document.getElementById('googleFormContainer');
+            if (formContainer.style.display === 'none') {
+                formContainer.style.display = 'block';
+            } else {
+                formContainer.style.display = 'none';
+            }
+        }
+        // Создаем newItemList за пределами функции addItem
+        var newItemList = document.createElement('ul');
+        var textforzadachi = document.getElementById("textforzadachi");
+
+
+
+        textforzadachi.style.display = "none";
+
+        const apiKey = 'AIzaSyAa4WKiq_OZzkcxvWA12Q0efiR4pZj9cso';
+        const spreadsheetId = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+        const sheetName = 'Проекты';
+        function formatArray(arr) {
+            return arr.map(item => `Название: ${item[0]}, Исполнитель: ${item[1]}`).join('\n');
+        }
+
+        function takeZadachi(data, id) {
+            // Пример: передача данных в другую функцию
+            zadachi(data, id);
+        }
+
+        function toId(string) {
+            const [datePart, timePart] = string.split(" ");
+            const [day, month, year] = datePart.split(".");
+            const [hour, minute, second] = timePart.split(":");
+
+            // Создаем новый объект Date с правильными аргументами
+            const date = new Date(year, month - 1, day, hour, minute, second);
+
+            const id = date.getTime();
+            return id;
+        }
+
+        function zadachi(data, id) {
+            // Ваш код для обработки данных
+            const dataall = data;
+            dataall.shift(); // Удалить первый элемент
+            let zadachki = [];
+
+            // Разбиваем на три массива
+            dataall.forEach(subarray => {
+                zadachki.push(subarray);
+            });
+
+            for (let i = 0; i < zadachki.length; i++) {
+                const item = zadachki[i];
+                if (item[1] == id) {
+                    var item1 = document.createElement('li');
+                    item1.textContent = '• ' + item[3] + '. Исполнитель: ' + item[2];
+                    item1.id = toId(item[0]);
+                    newItemList.appendChild(item1);
+                }
+
+            }
+            // Выводим данные на страницу
+
+        }
+
+        function handleData(data) {
+
+            // Пример: передача данных в другую функцию
+            anotherFunction(data);
         }
         function anotherFunction(data) {
             // Ваш код для обработки данных
             const dataall = data;
             dataall.shift(); // Удалить первый элемент
-            dataall.forEach(subarray => subarray.shift()); // Удалить первый элемент из каждого подмассива
-            console.log('Данные в другой функции:', dataall);
             let projects = [];
-            let tasks = [];
-            let subtasks = [];
 
             // Разбиваем на три массива
             dataall.forEach(subarray => {
-                const itemType = subarray[1]; // Второй элемент подмассива
-
-                if (itemType === 'Проект') {
-                    projects.push(subarray);
-                } else if (itemType === 'Задача') {
-                    tasks.push(subarray);
-                } else if (itemType === 'Подзадача') {
-                    subtasks.push(subarray);
-                }
+                projects.push(subarray);
+                projs.push(subarray);
             });
-            tasks = linkElements(tasks,projects);
-            subtasks = linkElements(subtasks,tasks);
-            console.log(projects);
-            console.log(tasks);
-            console.log(subtasks);
-
-
-
             // Выводим данные на страницу
-            document.getElementById('projects-container').textContent = formatArray(projects);
-            document.getElementById('tasks-container').textContent = formatArray(tasks);
-            document.getElementById('subtasks-container').textContent = formatArray(subtasks);
-            // Проекты
-            /*const tableContainer = document.getElementById('table-container');
-            tableContainer.appendChild(buildTable(projects, tasks, subtasks));*/
+            for (let i = 0; i < projects.length; i++) {
+                const item = projects[i];
+                if (item[2] == nameuser) {
+                    addItem(item[1], item[2], toId(item[0]));
+                }
+                else {
+                    checkfortaks(item);
+                }
+
+            }
         }
 
-        /*function buildTable(projects, tasks, subtasks) {
-    const table = document.createElement('table');
-    table.border = '1';
+        function checkfortaks(item) {
+            const apiKey = 'AIzaSyCVdv4AjjO6rAXsCfvhm7JQY6jR2NrEwgI';
+            const spreadsheetId = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+            const sheetName = 'формазадач';
+            const url3 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+            const xhr3 = new XMLHttpRequest();
+            xhr3.onreadystatechange = function () {
+                if (xhr3.readyState === 4) {
+                    if (xhr3.status === 200) {
+                        const data3 = JSON.parse(xhr3.responseText);
+                        const values3 = data3.values;
+                        xhrtasks(values3, item);
+                    } else {
+                        console.error('Ошибка при получении данных:', xhr1.statusText);
+                    }
+                }
+            }.bind(null, item);
+            xhr3.open('GET', url3, true);
+            xhr3.send();
+        }
 
-    // Заголовок таблицы
-    const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    headerRow.innerHTML = '<th>Имя проекта</th><th>Исполнитель проекта</th><th>Имя задачи</th><th>Исполнитель задачи</th><th>Имя подзадачи</th><th>Исполнитель подзадачи</th>';
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
+        function xhrtasks(data, item) {
+            const dataall = data;
+            dataall.shift(); // Удалить первый элемент
+            let zadachki = [];
 
-    // Тело таблицы
-    const tbody = document.createElement('tbody');
-
-    // Создаем строки таблицы на основе данных из массивов projects, tasks и subtasks
-    projects.forEach(project => {
-        const [projectName, projectExecutor] = project;
-
-        const projectRow = document.createElement('tr');
-        const projectCell = document.createElement('td');
-        const projectExecutorCell = document.createElement('td');
-        projectCell.textContent = projectName;
-        projectExecutorCell.textContent = projectExecutor;
-
-        projectRow.appendChild(projectCell);
-        projectRow.appendChild(projectExecutorCell);
-
-        tbody.appendChild(projectRow);
-
-        // Обрабатываем соответствующие задачи для проекта
-        const projectTasks = tasks.filter(task => task[3] === projectName);
-        projectTasks.forEach(task => {
-            const [taskName, taskExecutor] = task;
-
-            const taskRow = document.createElement('tr');
-            const taskCell = document.createElement('td');
-            const taskExecutorCell = document.createElement('td');
-            taskCell.textContent = taskName;
-            taskExecutorCell.textContent = taskExecutor;
-
-            taskRow.appendChild(taskCell);
-            taskRow.appendChild(taskExecutorCell);
-
-            tbody.appendChild(taskRow);
-
-            // Обрабатываем соответствующие подзадачи для задачи
-            const taskSubtasks = subtasks.filter(subtask => subtask[3] === taskName);
-            taskSubtasks.forEach(subtask => {
-                const [subtaskName, subtaskExecutor] = subtask;
-
-                const subtaskRow = document.createElement('tr');
-                const subtaskCell = document.createElement('td');
-                const subtaskExecutorCell = document.createElement('td');
-                subtaskCell.textContent = subtaskName;
-                subtaskExecutorCell.textContent = subtaskExecutor;
-
-                subtaskRow.appendChild(subtaskCell);
-                subtaskRow.appendChild(subtaskExecutorCell);
-
-                tbody.appendChild(subtaskRow);
+            // Разбиваем на три массива
+            dataall.forEach(subarray => {
+                zadachki.push(subarray);
             });
-        });
-    });
+            for (let i = 0; i < zadachki.length; i++) {
+                const item1 = zadachki[i];
+                if (item1[1] == toId(item[0])) {
+                    if (item1[2] == nameuser) {
+                        addItem(item[1], item[2], toId(item[0]));
+                    }
+                }
+            }
 
-    table.appendChild(tbody);
-
-    return table;
-}*/
-
-        function linkElements(array, parentArray) {
-    return array.map(item => {
-        const parentName = item[3]; // Предполагаем, что имя родителя находится в 4-м элементе
-        const parent = parentArray.find(parentItem => parentItem[0] === parentName);
-        if (parent) {
-            // Добавляем имя и второй элемент подмассива родителя
-            return [...item, parent[0], parent[2]];
-        } else {
-            return item; // Если родитель не найден, оставляем без изменений
         }
-    });
-}
+
+        function checkparents(data, id, item) {
+            const dataall = data;
+            dataall.shift();
+            let zadachki = [];
+            let truezadachi = [];
+            dataall.forEach(subarray => {
+                zadachki.push(subarray);
+            });
+            let trg = false;
+            for (let i = 0; i < zadachki.length; i++) {
+                const item1 = zadachki[i];
+                if (parseInt(item1[1]) == id) {
+                    trg = true;
+                    truezadachi.push(item1);
+                }
+            }
+
+            //console.log(truezadachi);
+            if (!trg) {
+
+
+                const apiKey7 = 'AIzaSyCVdv4AjjO6rAXsCfvhm7JQY6jR2NrEwgI';
+                const spreadsheetId7 = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+                const sheetName7 = 'status_project';
+                const url7 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId7}/values/${sheetName7}?key=${apiKey7}`;
+                const xhr7 = new XMLHttpRequest();
+                xhr7.onreadystatechange = function () {
+                    if (xhr7.readyState === 4) {
+                        if (xhr7.status === 200) {
+                            const data7 = JSON.parse(xhr7.responseText);
+                            const values7 = data7.values;
+                            areyouready2(values7, item, id); // Передаем newItemList и id в функцию takeZadachi
+                        } else {
+                            console.error('Ошибка при получении данных:', xhr7.statusText);
+                        }
+                    }
+                }.bind(null, item, id);
+
+                xhr7.open('GET', url7, true);
+                xhr7.send();
+
+
+
+
+            }
+            else {
+
+                const apiKey6 = 'AIzaSyCVdv4AjjO6rAXsCfvhm7JQY6jR2NrEwgI';
+                const spreadsheetId6 = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+                const sheetName6 = 'status_project';
+                const url6 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId6}/values/${sheetName6}?key=${apiKey6}`;
+                const xhr6 = new XMLHttpRequest();
+                xhr6.onreadystatechange = function () {
+                    if (xhr6.readyState === 4) {
+                        if (xhr6.status === 200) {
+                            const data6 = JSON.parse(xhr6.responseText);
+                            const values6 = data6.values;
+                            areyouready(values6, truezadachi, item); // Передаем newItemList и id в функцию takeZadachi
+                        } else {
+                            console.error('Ошибка при получении данных:', xhr6.statusText);
+                        }
+                    }
+                }.bind(null, truezadachi, item);
+
+                xhr6.open('GET', url6, true);
+                xhr6.send();
+
+            }
+        }
+
+
+        function areyouready2(data, item, id1) {
+            const dataall = data;
+            dataall.shift();
+            let statuts = [];
+            //console.log(truezadachi);
+            dataall.forEach(subarray => {
+                statuts.push(subarray);
+            });
+            let trg1 = false;
+            //console.log(statuts);
+            for (let i = 0; i < statuts.length; i++) {
+                const item1 = statuts[i];
+                if (id1 == parseInt(item1[1])) {
+                    trg1 = true;
+                }
+
+            }
+
+
+            //gfgssssssssssssssssssssssssssssssssssssssss
+
+            if (trg1) {
+                item.innerText = item.innerText + ' Готовность: 100%';
+            }
+            else {
+                item.innerText = item.innerText + ' Готовность: 0%';
+                var list = document.getElementById('item-list');
+                var button = document.createElement('button');
+
+                button.classList.add('button');
+                button.textContent = 'Добавить статус к ' + id1;
+                button.addEventListener('click', function () {
+                    var formstatus = document.getElementById('formstatus');
+                    if (formstatus.style.display === 'none') {
+                        formstatus.style.display = 'block';
+                    } else {
+                        formstatus.style.display = 'none';
+                    }
+                });
+
+                // Создаем элемент списка, к которому добавим кнопку
+                var item = document.createElement('li');
+
+                // Добавляем кнопку к элементу списка
+                item.appendChild(button);
+
+                list.appendChild(item);
+            }
+
+        }
+
+        function areyouready(data, truezadachi, item) {
+            const dataall = data;
+            dataall.shift();
+            let statuts = [];
+            //console.log(truezadachi);
+            dataall.forEach(subarray => {
+                statuts.push(subarray);
+            });
+            let countzad = truezadachi.length;
+            let countzadcurrent = 0;
+            let trg1 = false;
+            //console.log(statuts);
+            for (let i = 0; i < statuts.length; i++) {
+                const item1 = statuts[i];
+                const jaga = item1[1];
+                for (let j = 0; j < truezadachi.length; j++) {
+                    const item2 = truezadachi[j];
+                    //console.log(toId(item2[0]));
+                    //console.log(item1[1]);
+                    if (toId(item2[0]) == parseInt(item1[1])) {
+                        countzadcurrent++;
+                    }
+                }
+            }
+            let procent = countzadcurrent * 100 / countzad;
+            item.innerText = item.innerText + ' Готовность: ' + procent + '%';
+
+        }
+
+
+
+        var projs = [];
+        function addItem(name, worker, id) {
+            var list = document.getElementById('item-list');
+            var item = document.createElement('li');
+            item.textContent = '• ' + name + '. Исполнитель: ' + worker + ' id: ' + id;
+
+            item.id = id;
+            const apiKey5 = 'AIzaSyCVdv4AjjO6rAXsCfvhm7JQY6jR2NrEwgI';
+            const spreadsheetId5 = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+            const sheetName5 = 'формазадач';
+            const url5 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId5}/values/${sheetName5}?key=${apiKey5}`;
+            const xhr5 = new XMLHttpRequest();
+            xhr5.onreadystatechange = function () {
+                if (xhr5.readyState === 4) {
+                    if (xhr5.status === 200) {
+                        const data5 = JSON.parse(xhr5.responseText);
+                        const values5 = data5.values;
+                        checkparents(values5, id, item);
+                    } else {
+                        console.error('Ошибка при получении данных:', xhr.statusText);
+                    }
+                }
+            }.bind(null, id, item);
+
+            xhr5.open('GET', url5, true);
+            xhr5.send();
+
+
+
+            list.appendChild(item);
+            item.addEventListener('click', function () {
+                document.querySelectorAll('#item-list li').forEach(function (li) {
+                    li.classList.remove("clicked");
+                });
+
+                // Добавляем класс "clicked" к элементу, на который кликнули
+                item.classList.add("clicked");
+                navigator.clipboard.writeText(id);
+                formContainer.style.display = 'none';
+                toggleButton.style.display = 'inline-block';
+                textforzadachi.style.display = "block";
+                newItemList.innerHTML = '';
+                const apiKey = 'AIzaSyCVdv4AjjO6rAXsCfvhm7JQY6jR2NrEwgI';
+                const spreadsheetId = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+                const sheetName = 'формазадач';
+                const url1 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+                const xhr1 = new XMLHttpRequest();
+                xhr1.onreadystatechange = function () {
+                    if (xhr1.readyState === 4) {
+                        if (xhr1.status === 200) {
+                            const data1 = JSON.parse(xhr1.responseText);
+                            const values1 = data1.values;
+                            takeZadachi(values1, id); // Передаем newItemList и id в функцию takeZadachi
+                        } else {
+                            console.error('Ошибка при получении данных:', xhr1.statusText);
+                        }
+                    }
+                }.bind(null, id);
+
+                xhr1.open('GET', url1, true);
+                xhr1.send();
+            });
+
+        };
 
         const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
         const xhr = new XMLHttpRequest();
@@ -220,25 +566,11 @@ p {
 
         xhr.open('GET', url, true);
         xhr.send();
+
+        // Добавляем newItemList в DOM
+        document.getElementById('new-item-list').appendChild(newItemList);
     </script>
-    <table align="center">
-      <tr>
-      <td>
-    <p class="blinking-text">Projects</p>
-    <br>
-    <p class="blinking-text"><pre id="projects-container"></pre></p>
-    <p class="blinking-text">Tasks</p>
-    <br>
-    <p class="blinking-text"><pre id="tasks-container"></pre></p>
-    <p class="blinking-text">Subtasks</p>
-    <br>
-    <p class="blinking-text"><pre id="subtasks-container"></pre></p></td>
-            <td>
-        
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnzNgqGExhajWkJxh3wc_dg6Qf5Kh5HzItmGvMJVKqxzJj5w/viewform?embedded=true" width="640" height="932" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe></td>
-        </tr>
-    </table>
-    
+
 </body>
 
 </html>

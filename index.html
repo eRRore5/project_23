@@ -5,48 +5,67 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Авторизация</title>
     <style>
-      @keyframes blink {
-    0% {
-        text-shadow: 0 0 10px red; /* Тень с красным свечением */
-    }
-    25% {
-        text-shadow: 0 0 10px blue; /* Тень с синим свечением */
-    }
-    50% {
-        text-shadow: 0 0 10px green; /* Тень с зеленым свечением */
-    }
-    75% {
-        text-shadow: 0 0 10px orange; /* Тень с оранжевым свечением */
-    }
-    100% {
-        text-shadow: 0 0 10px purple; /* Тень с фиолетовым свечением */
-    }
-}
+        @keyframes blink {
+            0% {
+                text-shadow: 0 0 10px black;
+                /* Тень с красным свечением */
+            }
 
-.blinking-text {
-    animation: blink 5s infinite;
-    font-size: 30px; /* Размер текста */
-    font-weight: bold; /* Увеличенная толщина шрифта */
-    display: inline-block;
-    color: gold; /* Белый текст */
+            50% {
+                text-shadow: 0 0 10px white;
+                /* Тень с зеленым свечением */
+            }
+        }
 
-}
-pre{
-  animation: blink 5s infinite;
-    font-size: 34px; /* Размер текста */
-    font-weight: bold; /* Увеличенная толщина шрифта */
-    display: inline-block;
-    color: gold; /* Белый текст */
-}
-h1 {
-    font-family: 'Trebuchet MS', sans-serif;
-    /* Рубленый шрифт заголовка */
-}
+        input {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            height: 40px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.2s ease-in-out;
+        }
 
-p {
-    font-family: 'Gill Sans', sans-serif  ;
-    /* Шрифт с засечками */
-}
+        input:focus {
+            border-color: #000;
+        }
+
+        .blinking-text {
+            animation: blink 5s infinite;
+            font-size: 30px;
+            /* Размер текста */
+            font-weight: bold;
+            /* Увеличенная толщина шрифта */
+            display: inline-block;
+            color: whitesmoke;
+            /* Белый текст */
+
+        }
+
+        pre {
+            animation: blink 5s infinite;
+            font-size: 34px;
+            /* Размер текста */
+            font-weight: bold;
+            /* Увеличенная толщина шрифта */
+            display: inline-block;
+            color: whitesmoke;
+            /* Белый текст */
+        }
+
+        h1 {
+            font-family: 'Trebuchet MS', sans-serif;
+            /* Рубленый шрифт заголовка */
+        }
+
+        p {
+            font-family: 'Gill Sans', sans-serif;
+            /* Шрифт с засечками */
+        }
 
         body {
             /* Указывает путь к изображению или его URL */
@@ -62,19 +81,24 @@ p {
 </head>
 
 <body align="center">
-    <p class="blinking-text">Вход
+    <p class="blinking-text">Вход в систему
         <br>
         <br>
-    Логин <br><input type="text" name="login" id="login" size="40">
-    <br>
-    <br>
-    Пароль <br><input type="password" name="password" id="password" size="40">
-    <br>
-
-    <input type="button" value="Показать пароль" onclick="togglePasswordVisibility()">
-    <br>
-    <br>
-    <input type="submit" id="send" value="Отправить" /></p>
+        Логин <input type="text" name="login" id="login" size="40">
+        <br>
+        <br>
+        Пароль
+        <input type="password" name="password" id="password" size="40">
+        <br>
+        <br>
+        <input type="button" value="Показать пароль" onclick="togglePasswordVisibility()">
+        <br>
+        <br>
+        <input type="submit" id="send" value="Отправить">
+        <br>
+        <br>
+        <input id="vhod" type="button" value="Вход" onclick="vhodi()">
+    </p>
 
     <script>
         function togglePasswordVisibility() {
@@ -84,51 +108,74 @@ p {
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById("send").onclick = function sendForm() {
-        const loginbox = document.getElementById('login');
-        const passwordBox = document.getElementById('password');
-        const enteredLogin = loginbox.value;
-        const enteredPassword = passwordBox.value;
 
-        // Путь к файлу с логином и паролем
-        const filePath = 'db.txt';
-
-        // Fetch API для чтения файла
-        fetch(filePath)
-            .then(response => response.text())
-            .then(data => {
-                let rex = /\b\w+:\w+\b/gi;
-                let a = data.match(rex);
-                let checkpoint = false;
-                for (let key of a)
-                {
-                    let b = key.split(':'); 
-                    if((b[0]==enteredLogin)&&(enteredPassword==b[1]))
-                    {
-                        checkpoint = true;
-                        break;
-                    }
-                    else
-                    {
-                        checkpoint = false;
-                    }   
-                }
-                if(checkpoint)
-                {
-                    window.location.href= '/kabinet.html?login=' + enteredLogin + '&password=' + enteredPassword
-                }
-                else
-                {
-                    window.location.href= '/fail.html'
-                }
-                
-            })
-            .catch(error => {
-                console.error('Ошибка чтения файла:', error);
-            });
+        function vhodi() {
+            window.location.href = '/kabinet.html?name=' + name + '&lvl=' + lvl;
         }
-    });
+        var toggleButton = document.getElementById('vhod');
+        toggleButton.style.display = 'none';
+
+        var name;
+
+        var lvl;
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("send").onclick = function sendForm() {
+                const loginbox = document.getElementById('login');
+                const passwordBox = document.getElementById('password');
+                const enteredLogin = loginbox.value;
+                const enteredPassword = passwordBox.value;
+
+                const apiKey = 'AIzaSyAa4WKiq_OZzkcxvWA12Q0efiR4pZj9cso';
+                const spreadsheetId = '1QgGoXLcpDvvL7HipR7UUIE5Ad3wurC9X-1Btlvac6YM';
+                const sheetName = 'users';
+
+
+                let userFound = false;
+
+
+                function handleData(data) {
+                    const dataall = data;
+                    dataall.shift(); // Удалить первый элемент
+                    let users = [];
+
+                    dataall.forEach(subarray => {
+                        users.push(subarray);
+                    });
+
+                    for (let i = 0; i < users.length; i++) {
+                        const item = users[i];
+                        if (item[3] == enteredLogin && item[4] == enteredPassword) {
+                            name = item[0];
+                            lvl = item[2];
+                            userFound = true;
+                            toggleButton.style.display = 'block';
+                        }
+                    }
+                    if (!userFound) {
+                        alert('Пользователь не найден');
+                    }
+                }
+
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            const data = JSON.parse(xhr.responseText);
+                            const values = data.values;
+                            handleData(values);
+                        } else {
+                            console.error('Ошибка при получении данных:', xhr.statusText);
+                        }
+                    }
+                };
+
+                xhr.open('GET', url, true);
+                xhr.send();
+
+
+            }
+        });
     </script>
 </body>
 
